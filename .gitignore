@@ -1,0 +1,9 @@
+.bundle/
+.vagrant/
+.ruby-version
+Gemfile.lock
+spec/fixtures/manifests/
+spec/fixtures/modules/
+.DS_Store
+.yardoc/
+doc/

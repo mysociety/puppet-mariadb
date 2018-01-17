@@ -1,0 +1,32 @@
+{
+  "name": "mysociety-mariadb",
+  "version": "0.1.0",
+  "author": "mysociety",
+  "summary": "Manage a MariaDB server with multi-instance support",
+  "license": "MIT",
+  "source": "https://github.com/mysociety/puppet-mariadb",
+  "project_page": "https://github.com/mysociety/puppet-mariadb",
+  "issues_url": "https://github.com/mysociety/puppet-mariadb/issues",
+  "dependencies": [
+    {
+      "name":"puppetlabs-stdlib",
+      "version_requirement":">= 4.2.0 <5.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.9.0 < 6.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "8",
+        "9"
+      ]
+    }
+  ],
+  "description": "Multi-instance MariaDB module for Debian."
+}
