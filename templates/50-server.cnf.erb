@@ -72,7 +72,7 @@ log_error = <%= @options['mysqld']['log_error'] %>
 # The following can be used as easy to replay backup logs or for replication.
 # note: if you are setting up a replication slave, see README.Debian about
 #       other settings you may need to change.
-<% if @enable_binlogs -%>
+<% if @options['mysqld']['enable_binlogs'] -%>
 server-id = <%= @options['mysqld']['server_id'] %>
 log-bin   = <%= @options['mysqld']['log_bin'] %>
 <% else -%>
