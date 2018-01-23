@@ -52,7 +52,7 @@ define mariadb::instance(
 
   -> exec { "install-mysql-${name}":
     command => "/usr/bin/mysql_install_db --datadir=${options['mysqld']['datadir']} --defaults-file=/etc/mysql/instances/${name}/my.cnf --skip-auth-anonymous-user --auth-root-authentication-method=socket --rpm --cross-bootstrap --user=mysql --disable-log-bin 2>&1 >/dev/null",
-    onlyif  => "/usr/bin/test -z \"$( ls -A ${options['mysqld']['datadir']} )\"",
+    unless  => "/usr/bin/test -e \"${options['mysqld']['datadir']}/mysql\"",
   }
 
   file { "/etc/logrotate.d/mysql-server-${name}":
