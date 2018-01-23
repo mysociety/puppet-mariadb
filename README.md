@@ -53,7 +53,9 @@ mariadb::options:
     bind_address: "%{::ipaddress}"
 ```
 
-Configuration options mapped to keys in the `options` hash as-is except for hyphens, which are replaced with underscores.
+Configuration options mapped to keys in the `options` hash as-is except for hyphens, which are always replaced with underscores.
+
+Keys that may be repeated more than once, for example `ignore_db_dir`, should be expressed as an array. These will then be iterated over in the configuration file.
 
 For multi-instance installs, the `$options` hash will act as defaults for each instance which can be overridden in the `$instances` hash:
 
@@ -66,6 +68,9 @@ mariadb::options:
   mysqld:
     max_connections: 1000
     bind_address: "%{::ipaddress}"
+    ignore_db_dir:
+     - 'lost+found'
+     - test
 
 mariadb::instances:
   standby:

@@ -23,6 +23,9 @@ datadir		= <%= @options['mysqld']['datadir'] %>
 tmpdir		= /tmp
 lc-messages-dir	= /usr/share/mysql
 skip-external-locking
+<% @options['mysqld']['ignore_db_dir'].each do |ignored| -%>
+ignore_db_dir = <%= ignored %>
+<% end -%>
 
 # Instead of skip-networking the default is now to listen only on
 # localhost which is more compatible and is not less secure.

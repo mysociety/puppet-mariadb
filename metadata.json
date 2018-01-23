@@ -1,6 +1,6 @@
 {
   "name": "mysociety-mariadb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "mysociety",
   "summary": "Manage a MariaDB server with multi-instance support",
   "license": "MIT",
